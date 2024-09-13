@@ -7,4 +7,5 @@ class MyColors {
   static const Color ratingColor = Color(0xffFCAF23);
   static const Color subtitleColor = Color(0xff8f8f8f);
   static const Color navBarBackColor = Color(0xff1F2029);
+  static const Color navBarIconColor = Color(0xff898A8E);
 }

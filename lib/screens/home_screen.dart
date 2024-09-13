@@ -3,6 +3,7 @@ import 'package:fashion_clothing/screens/widgets/carousel_slider.dart';
 import 'package:fashion_clothing/screens/widgets/category_box.dart';
 import 'package:fashion_clothing/screens/widgets/navbar.dart';
 import 'package:fashion_clothing/screens/widgets/product_card.dart';
+import 'package:fashion_clothing/screens/widgets/sorting_container.dart';
 import 'package:fashion_clothing/utils/colors/colors.dart';
 import 'package:fashion_clothing/utils/images/images.dart';
 import 'package:flutter/material.dart';
@@ -21,10 +22,11 @@ class _HomeScreenState extends State<HomeScreen> {
   bool sortTapped = false;
   @override
   Widget build(BuildContext context) {
-    List<String> sortingKeyword = ["All", "Newest", "Popular", "Man", "Woman"];
     List definedData = Data.dataList;
     return Scaffold(
+      bottomNavigationBar: const NavBar(),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 80,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +67,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const NavBar(),
               Row(
                 children: [
                   Expanded(
@@ -196,30 +197,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 45,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: sortingKeyword.length,
+                    itemCount: Data.sortingKeyword.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        margin: const EdgeInsets.only(right: 7),
-                        height: 40,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            color: sortTapped
-                                ? MyColors.primaryColor
-                                : Colors.white,
-                            borderRadius: const BorderRadius.horizontal(
-                                left: Radius.circular(20),
-                                right: Radius.circular(20)),
-                            border: Border.all(color: MyColors.borderColor)),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Text(
-                            sortingKeyword[index],
-                            style: TextStyle(
-                                color:
-                                    sortTapped ? Colors.white : Colors.black),
-                          ),
-                        ),
-                      );
+                      return SortingContainer(index: index);
                     }),
               ),
               const SizedBox(height: 15),

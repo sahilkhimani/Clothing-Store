@@ -102,4 +102,11 @@ class Data {
     }
   ];
   static TimeOfDay time = const TimeOfDay(hour: 24, minute: 24);
+  static List<String> sortingKeyword = [
+    "All",
+    "Newest",
+    "Popular",
+    "Man",
+    "Woman"
+  ];
 }

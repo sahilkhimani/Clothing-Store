@@ -14,7 +14,7 @@ class MainClass extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       // home: OnBoardingScreen(),
-      home: NavBar(),
+      home: HomeScreen(),
     );
   }
 }

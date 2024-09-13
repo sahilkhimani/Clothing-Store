@@ -1,5 +1,6 @@
 import 'package:fashion_clothing/utils/colors/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class ProductCard extends StatefulWidget {
   final String productName;
@@ -49,9 +50,7 @@ class _ProductCardState extends State<ProductCard> {
                         });
                       },
                       icon: Icon(
-                        tapped
-                            ? Icons.favorite
-                            : Icons.favorite_border_outlined,
+                        tapped ? Iconsax.heart : Icons.favorite_border_outlined,
                         color: tapped ? Colors.red : MyColors.primaryColor,
                       )),
                 ),
