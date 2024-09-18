@@ -1,4 +1,6 @@
 import 'package:fashion_clothing/screens/home_screen.dart';
+import 'package:fashion_clothing/screens/my_cart_screen.dart';
+import 'package:fashion_clothing/screens/wishlist_screen.dart';
 import 'package:fashion_clothing/utils/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
@@ -43,7 +45,13 @@ class _NavBarState extends State<NavBar> {
             // decoration: const BoxDecoration(
             //     shape: BoxShape.circle, color: Colors.white),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            const MyCartScreen()));
+              },
               icon: const Icon(
                 color: MyColors.navBarIconColor,
                 Iconsax.bag_2_copy,
@@ -55,7 +63,13 @@ class _NavBarState extends State<NavBar> {
             // decoration: const BoxDecoration(
             //     shape: BoxShape.circle, color: Colors.white),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            const WishListScreen()));
+              },
               icon: const Icon(
                 color: MyColors.navBarIconColor,
                 Iconsax.heart_copy,

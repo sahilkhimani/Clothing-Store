@@ -209,7 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     mainAxisSpacing: 15,
-                    childAspectRatio: 0.65,
+                    childAspectRatio: 0.62,
                     crossAxisSpacing: 15),
                 itemCount: definedData.length,
                 itemBuilder: (BuildContext context, int index) {
@@ -218,6 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     productRating: definedData[index]['rating'],
                     productPrice: definedData[index]['price'],
                     productImage: definedData[index]['images'][0],
+                    index: index,
                   );
                 },
               ),
