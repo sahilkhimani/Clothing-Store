@@ -9,21 +9,22 @@ class ProductCard extends StatefulWidget {
   final String productRating;
   final double productPrice;
   final String productImage;
+  bool favorite = false;
   final int index;
-  const ProductCard(
+  ProductCard(
       {super.key,
       required this.productName,
       required this.productRating,
       required this.productPrice,
       required this.productImage,
-      required this.index});
+      required this.index,
+      required this.favorite});
 
   @override
   State<ProductCard> createState() => _ProductCardState();
 }
 
 class _ProductCardState extends State<ProductCard> {
-  bool tapped = false;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -59,20 +60,16 @@ class _ProductCardState extends State<ProductCard> {
                     child: IconButton(
                         onPressed: () {
                           setState(() {
-                            tapped = !tapped;
-                            if (tapped) {
-                              Data.favoriteProducts
-                                  .add(Data.dataList[widget.index]);
-                            } else {
-                              Data.favoriteProducts.removeAt(widget.index);
-                            }
+                            widget.favorite = !widget.favorite;
+                            Data.dataList[widget.index]['favorite'] =
+                                widget.favorite;
                           });
                         },
                         icon: Icon(
-                          tapped
+                          widget.favorite
                               ? Iconsax.heart
                               : Icons.favorite_border_outlined,
-                          color: tapped
+                          color: widget.favorite
                               ? MyColors.primaryColor
                               : MyColors.primaryColor,
                         )),

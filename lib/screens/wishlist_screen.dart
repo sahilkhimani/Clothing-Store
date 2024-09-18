@@ -10,7 +10,6 @@ class WishListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List favoriteList = Data.favoriteProducts;
     return Scaffold(
       appBar: AppBar(
         title: const Text("My Wishllist"),
@@ -52,15 +51,18 @@ class WishListScreen extends StatelessWidget {
                     mainAxisSpacing: 15,
                     childAspectRatio: 0.62,
                     crossAxisSpacing: 15),
-                itemCount: favoriteList.length,
+                itemCount: Data.dataList.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return ProductCard(
-                    productName: favoriteList[index]['name'],
-                    productRating: favoriteList[index]['rating'],
-                    productPrice: favoriteList[index]['price'],
-                    productImage: favoriteList[index]['images'][0],
-                    index: index,
-                  );
+                  if (Data.dataList[index]['favorite']) {
+                    return ProductCard(
+                      productName: Data.dataList[index]['name'],
+                      productRating: Data.dataList[index]['rating'],
+                      productPrice: Data.dataList[index]['price'],
+                      productImage: Data.dataList[index]['images'][0],
+                      favorite: Data.dataList[index]['favorite'],
+                      index: index,
+                    );
+                  }
                 },
               ),
             ],

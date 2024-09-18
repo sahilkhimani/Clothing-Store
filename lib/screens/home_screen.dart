@@ -218,6 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     productRating: definedData[index]['rating'],
                     productPrice: definedData[index]['price'],
                     productImage: definedData[index]['images'][0],
+                    favorite: definedData[index]['favorite'],
                     index: index,
                   );
                 },

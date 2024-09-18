@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Data {
   static List<Map> dataList = [
     {
-      "category": "Man",
+      "category": "Woman",
       "images": [
         'assets/images/ballonLazer1.jpg',
         'assets/images/ballonLazer2.jpg',
@@ -22,10 +22,11 @@ class Data {
         'brown': Colors.brown
       },
       "price": 69.90,
-      "rating": "4.9"
+      "rating": "4.9",
+      "favorite": false
     },
     {
-      "category": "Man",
+      "category": "Woman",
       "images": [
         'assets/images/BootCutJeans1.jpg',
         'assets/images/BootCutJeans2.jpg',
@@ -39,7 +40,8 @@ class Data {
       "size": ['25', '26', '27', '28', '29', '30'],
       "color": [Colors.brown, Colors.black, Colors.white],
       "price": 49.90,
-      "rating": "4.7"
+      "rating": "4.7",
+      "favorite": false
     },
     {
       "category": "Man",
@@ -56,10 +58,11 @@ class Data {
       "size": ['XS', 'S', 'M', 'L', 'XL'],
       "color": [Colors.white, Colors.pink, Colors.white],
       "price": 25.90,
-      "rating": "4.0"
+      "rating": "4.0",
+      "favorite": false
     },
     {
-      "category": "Man",
+      "category": "Woman",
       "images": [
         'assets/images/ballonLazer1.jpg',
         'assets/images/ballonLazer2.jpg',
@@ -74,10 +77,11 @@ class Data {
       "size": ['S', 'M', 'L', 'XL'],
       "color": [Colors.black, Colors.brown, Colors.white, Colors.blue],
       "price": 69.90,
-      "rating": "4.9"
+      "rating": "4.9",
+      "favorite": false
     },
     {
-      "category": "Man",
+      "category": "Woman",
       "images": [
         'assets/images/BootCutJeans1.jpg',
         'assets/images/BootCutJeans2.jpg',
@@ -91,10 +95,11 @@ class Data {
       "size": ['25', '26', '27', '28', '29', '30'],
       "color": [Colors.black, Colors.brown, Colors.white, Colors.blue],
       "price": 49.90,
-      "rating": "4.7"
+      "rating": "4.7",
+      "favorite": false
     },
     {
-      "category": "Man",
+      "category": "Woman",
       "images": [
         'assets/images/RibbedShirt1.jpg',
         'assets/images/RibbedShirt2.jpg',
@@ -108,7 +113,8 @@ class Data {
       "size": ['XS', 'S', 'M', 'L', 'XL'],
       "color": [Colors.black, Colors.brown, Colors.white, Colors.blue],
       "price": 25.90,
-      "rating": "4.0"
+      "rating": "4.0",
+      "favorite": false
     }
   ];
   static TimeOfDay time = const TimeOfDay(hour: 24, minute: 24);
@@ -119,8 +125,6 @@ class Data {
     "Man",
     "Woman"
   ];
-
-  static List favoriteProducts = [];
 
   static List myOrderCart = [];
 }
