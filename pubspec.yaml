@@ -88,8 +88,6 @@ flutter:
     - family: CustomIcons
       fonts:
         - asset: assets/fonts/Dress.ttf
-        - asset: assets/fonts/Jacket.ttf
-        - asset: assets/fonts/pant.ttf
           weight: 700
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
